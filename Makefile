@@ -5,22 +5,7 @@
 ## Makefile code source
 ##
 
-SRC	=	lib/my/my_putchar.c \
-		lib/my/my_put_nbr.c \
-		lib/my/my_putstr.c	\
-		lib/my/my_getnbr.c	\
-		lib/my/my_strlen.c
-
-OBJ1	=	$(SRC:.=.o)
-
-NAMELIB = libmy.a
-
-all: lib compile clean
-
-lib: $(OBJ1)
-	gcc -c $(OBJ1)
-	ar rc ./lib/my/$(NAMELIB) *o
-	@rm -f *.o
+all: compile clean
 
 compile:
 	@cd ./generator && make && rm -f *.o

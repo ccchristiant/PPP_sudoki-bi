@@ -5,12 +5,14 @@
 ## Makefile
 ##
 
-SRC	=	src/error_handle.c	\
-		src/set_value.c	\
-		solver.c
+SRC	=	solver.c			\
+		src/check_error.c	\
+		src/fill_grid.c		\
+
+OBJ = $(SRC:.c=.o)
 
 compile:
-	@gcc -o solver $(SRC) -L ../lib/my -lmy
+	@gcc -o solver $(SRC) -Wall -Wextra -I./include
 
 clean:
 	@rm -f *~
