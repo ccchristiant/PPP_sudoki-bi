@@ -7,47 +7,35 @@
 
 #include "../include/my.h"
 
-void create_wall(generator_t *generator)
+static void display_nb(void)
 {
-    generator->arr[0][0] = '*';
-    generator->arr[generator->y - 1][generator->x - 1] = '*';
-    for (int i = 0; i < generator->y; i++) {
-        for (int j = 0; j < generator->x; j++) {
-            generator->arr[i][rand() % generator->x] = '*';
-        }
-        generator->arr[i][rand() % generator->x] = '*';
+    int *arr =  malloc(sizeof(int *) * 9);
+
+    for (int i = 0; i < rand() % 4; i++) {
+            arr[i] = rand() % (9 - 1) + 1;
     }
-    for (int i = 0; i < generator->y; i++) {
-        write(1, generator->arr[i], my_strlen(generator->arr[i]));
-        write(1, "\n", 1);
+
+
+    for (int i = 0; i < 9; i++) {
+        printf((arr[i] != 0) ? "%d" : " ", arr[i]);
+        printf(" ");
     }
 }
 
-void create_dot(generator_t *generator)
+static void display_map(void)
 {
-    generator->arr = malloc(sizeof(char *) * generator->y + 1);
-    for (int i = 0; i < generator->y; i++) {
-        generator->arr[i] = malloc(sizeof(char) * generator->x + 1);
+    printf("|------------------|\n");
+    for (int i = 0; i < 9; i++) {
+        printf("|");
+        display_nb();
+        printf("|\n");
     }
-    for (int i = 0; i < generator->y; i++) {
-        for (int j = 0; j < generator->x; j++) {
-            generator->arr[i][j] = 'X';
-        }
-        generator->arr[i][generator->x] = '\0';
-    }
-    generator->arr[generator->y] = NULL;
+    printf("|------------------|\n");
 }
 
 int main(int ac, char **av)
 {
-    generator_t *generator = malloc(sizeof(generator_t));
-    set_value_generator(generator, av);
-    if (check_error_generator(ac, av) == 84) {
-        return (84);
-    }
-    srand(time(0));
-    create_dot(generator);
-    create_wall(generator);
-    free(generator);
+    srand(time(NULL));
+    display_map();
     return (0);
 }

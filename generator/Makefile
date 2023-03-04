@@ -5,12 +5,10 @@
 ## Makefile
 ##
 
-SRC	=	src/error_handle.c	\
-		src/set_value.c	\
-		generator.c	\
+SRC	=	generator.c	\
 
 compile:
-	@gcc -o generator -g3 $(SRC) -L ../lib/my -lmy
+	@gcc -o generator -g3 $(SRC)
 
 clean:
 	@rm -f *~
