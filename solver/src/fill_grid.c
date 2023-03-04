@@ -5,8 +5,6 @@
 ** fill_grid
 */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "solver.h"
 
 static void check(arr_t *arr, int i, int j)
