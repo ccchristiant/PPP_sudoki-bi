@@ -8,9 +8,8 @@
 all: compile clean
 
 compile:
-	@cd ./generator && make && rm -f *.o
 	@cd ./solver && make && rm -f *.o
-
+	@cd ./generator && make && rm -f *.o
 clean:
 	@rm -f *~
 	@rm -f *.o

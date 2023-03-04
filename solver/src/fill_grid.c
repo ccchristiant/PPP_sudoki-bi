@@ -62,8 +62,3 @@ char **take_file(void)
     }
     return (arr);
 }
-
-void fill_grid(int tab[N][N], char buffer[BUFFERSIZE])
-{
-
-}

@@ -21,7 +21,6 @@ typedef struct arr_s {
 } arr_t;
 
 int check_error(int ac, char **av);
-void fill_grid(int tab[N][N], char buffer[BUFFERSIZE]);
 void take_number(arr_t *array, char **arr);
 char **take_file(void);
 
