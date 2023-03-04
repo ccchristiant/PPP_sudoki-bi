@@ -28,7 +28,8 @@ static void check(arr_t *arr, int i, int j)
         arr->column++;
     }
 }
-void **take_number(arr_t *array, char **arr)
+
+void take_number(arr_t *array, char **arr)
 {
     array->column = 0, array->row = 0;
     array->grid = malloc(sizeof(int *) * 9);
