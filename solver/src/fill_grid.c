@@ -5,8 +5,6 @@
 ** fill_grid
 */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "solver.h"
 
 static void check(arr_t *arr, int i, int j)
@@ -28,7 +26,8 @@ static void check(arr_t *arr, int i, int j)
         arr->column++;
     }
 }
-void **take_number(arr_t *array, char **arr)
+
+void take_number(arr_t *array, char **arr)
 {
     array->column = 0, array->row = 0;
     array->grid = malloc(sizeof(int *) * 9);
@@ -60,9 +59,4 @@ char **take_file(void)
         i++;
     }
     return (arr);
-}
-
-void fill_grid(int tab[N][N], char buffer[BUFFERSIZE])
-{
-
 }

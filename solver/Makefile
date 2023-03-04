@@ -7,6 +7,7 @@
 
 SRC	=	solver.c			\
 		src/check_error.c	\
+		src/fill_grid.c		\
 		src/solve.c			\
 		src/is_safe.c		\
 		src/display_grid.c	\
