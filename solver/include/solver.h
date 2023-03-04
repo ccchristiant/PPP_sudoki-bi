@@ -6,7 +6,13 @@
 #define BUFFERSIZE 20
 #define N 9
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+
 int check_error(int ac, char **av);
-void fill_grid(int tab[N][N], char buffer[BUFFERSIZE]);
+int solve(int **grid, int row, int col);
+int is_safe(int **grid, int row, int col, int num);
+void display_grid(int **grid);
 
 #endif /* SOLVER_H */
